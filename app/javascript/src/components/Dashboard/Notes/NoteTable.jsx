@@ -1,70 +1,54 @@
 import React from "react";
 
-import { Checkbox } from "neetoui";
+import { MenuVertical, Clock } from "@bigbinary/neeto-icons";
+import { Dropdown, Typography, Label } from "@bigbinary/neetoui/v2";
 
-export default function NoteTable({
-  selectedNoteIds,
-  setSelectedNoteIds,
-  notes = []
-}) {
+function NoteTable() {
   return (
-    <div className="w-full px-4">
-      <table className="nui-table nui-table--checkbox">
-        <thead>
-          <tr>
-            <th>
-              <Checkbox
-                checked={
-                  selectedNoteIds.length === notes.map(note => note.id).length
-                }
-                onClick={() => {
-                  const noteIds = notes.map(note => note.id);
-                  if (selectedNoteIds.length === noteIds.length) {
-                    setSelectedNoteIds([]);
-                  } else {
-                    setSelectedNoteIds(noteIds);
-                  }
-                }}
-              />
-            </th>
-            <th className="text-left">Title</th>
-            <th className="text-left">Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          {notes.map(note => (
-            <tr
-              key={note.id}
-              className={"cursor-pointer bg-white hover:bg-gray-50"}
-            >
-              <td>
-                <Checkbox
-                  checked={selectedNoteIds.includes(note.id)}
-                  onClick={event => {
-                    event.stopPropagation();
-                    const index = selectedNoteIds.indexOf(note.id);
-
-                    if (index > -1) {
-                      setSelectedNoteIds([
-                        ...selectedNoteIds.slice(0, index),
-                        ...selectedNoteIds.slice(index + 1)
-                      ]);
-                    } else {
-                      setSelectedNoteIds([...selectedNoteIds, note.id]);
-                    }
-                  }}
-                />
-              </td>
-              <td>
-                <div className="flex flex-row items-center justify-start text-gray-900">
-                  {note.title}
-                </div>
-              </td>
-              <td>{note.description}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
     </div>
   );
 }
+
+const Card = () => {
+  return (
+    <div className="mb-4 rounded-sm neeto-ui-border-gray-300 neeto-ui-shadow-xs border neeto-ui-bg-white">
+      <div className="p-4">
+        <div className="flex justify-between">
+          <Typography style="h4">How to claim the warranty?</Typography>
+          <div className="flex flex-row items-center justify-end space-x-3">
+            <Dropdown icon={MenuVertical} buttonStyle="icon" autoWidth>
+              <li>Edit</li>
+              <li>Delete</li>
+            </Dropdown>
+          </div>
+        </div>
+        <Typography className="text-sm leading-5 neeto-ui-text-gray-600 font-normal border-b pb-4 neeto-ui-border-gray-300">
+          "Are you getting my texts???" she texted to him. He glanced at it and
+          chuckled under his breath. Of course he was getting them, but if he
+          wasn't getting
+        </Typography>
+        <div className="flex justify-between mt-4">
+          <Label className="border rounded-sm py-1 px-2 neeto-ui-bg-gray-100">
+            Getting Started
+          </Label>
+          <Label className="flex justify-evenly">
+            {<Clock width="16" />}{" "}
+            <p className="inline-block mx-1"> Created 2 hours ago</p>
+            <img
+              src="https://randomuser.me/api/portraits/women/90.jpg"
+              width="24"
+              className="inline-block rounded-full"
+            />
+          </Label>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default NoteTable;

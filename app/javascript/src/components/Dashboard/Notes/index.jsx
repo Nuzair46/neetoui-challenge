@@ -8,7 +8,7 @@ import notesApi from "apis/notes";
 
 //import DeleteAlert from "./DeleteAlert";
 import NewNotePane from "./NewNotePane";
-//import NoteTable from "./NoteTable";
+import NoteTable from "./NoteTable";
 
 const Notes = () => {
   const [loading, setLoading] = useState(true);
@@ -17,6 +17,7 @@ const Notes = () => {
   //const [searchTerm, setSearchTerm] = useState("");
   //const [selectedNoteIds, setSelectedNoteIds] = useState([]);
   const [notes, setNotes] = useState([]);
+  const [showMenuBar, setShowMenuBar] = useState(true);
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
 
   useEffect(() => {
@@ -44,7 +45,7 @@ const Notes = () => {
 
   return (
     <div className="flex w-full">
-      <MenuBar showMenu={true} title="Notes">
+      <MenuBar showMenu={showMenuBar} title="Notes">
         <MenuBar.Block label="All" count={200} active />
         <MenuBar.Block label="Users" count={80} />
         <MenuBar.Block label="Leads" count={60} />
@@ -101,7 +102,7 @@ const Notes = () => {
       </MenuBar>
       <div className="flex flex-col content-start w-full px-5 justify-items-start">
         <Header
-          menuBarToggle={true}
+          menuBarToggle={() => setShowMenuBar(!showMenuBar)}
           title="All Notes"
           actionBlock={
             <div className="flex">
@@ -121,6 +122,7 @@ const Notes = () => {
             </div>
           }
         />
+        <NoteTable />
         <NewNotePane
           showPane={showNewNotePane}
           setShowPane={setShowNewNotePane}
