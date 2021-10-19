@@ -8,6 +8,7 @@ import NewNoteForm from "./NewNoteForm";
 export default function NewNotePane({ fetchNotes, showPane, setShowPane }) {
   const onClose = () => setShowPane(false);
   const handleSubmit = () => {
+    onClose();
     Toastr.success("Notes successfully created.");
   };
   return (
