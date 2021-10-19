@@ -3,6 +3,8 @@ import React from "react";
 import { MenuVertical, Clock } from "@bigbinary/neeto-icons";
 import { Dropdown, Typography, Label } from "@bigbinary/neetoui/v2";
 
+import DeleteAlert from "./DeleteAlert";
+
 function NoteTable() {
   return (
     <div>
@@ -15,6 +17,10 @@ function NoteTable() {
 }
 
 const Card = () => {
+  const [delToast, setDelToast] = React.useState(false);
+  const handleDelete = () => {
+    setDelToast(true);
+  };
   return (
     <div className="mb-4 rounded-sm neeto-ui-border-gray-300 neeto-ui-shadow-xs border neeto-ui-bg-white">
       <div className="p-4">
@@ -23,7 +29,7 @@ const Card = () => {
           <div className="flex flex-row items-center justify-end space-x-3">
             <Dropdown icon={MenuVertical} buttonStyle="icon" autoWidth>
               <li>Edit</li>
-              <li>Delete</li>
+              <li onClick={handleDelete}>Delete</li>
             </Dropdown>
           </div>
         </div>
@@ -47,6 +53,7 @@ const Card = () => {
           </Label>
         </div>
       </div>
+      <DeleteAlert showToast={delToast} setShowToast={setDelToast} />
     </div>
   );
 };
