@@ -1,7 +1,7 @@
 import React from "react";
 
 import { MenuVertical, Clock } from "@bigbinary/neeto-icons";
-import { Dropdown, Typography, Label } from "@bigbinary/neetoui/v2";
+import { Dropdown, Typography, Label, Tooltip } from "@bigbinary/neetoui/v2";
 
 import DeleteAlert from "./DeleteAlert";
 
@@ -44,7 +44,9 @@ const Card = () => {
           </Label>
           <Label className="flex justify-evenly">
             {<Clock width="16" />}{" "}
-            <p className="inline-block mx-1"> Created 2 hours ago</p>
+            <Tooltip placement={"bottom-end"} content={"Wednesday, 10:30AM"}>
+              <p className="inline-block mx-1"> Created 2 hours ago</p>
+            </Tooltip>
             <img
               src="https://randomuser.me/api/portraits/women/90.jpg"
               width="24"
