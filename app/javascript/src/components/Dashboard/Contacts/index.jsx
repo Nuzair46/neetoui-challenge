@@ -5,12 +5,15 @@ import { Typography, Input, Button } from "neetouiv2";
 
 import { Header, MenuBar } from "neetouiv2/layouts";
 
+import ContactCard from "./ContactCard";
+import DeleteAlert from "./DeleteAlert";
 import NewContactPane from "./NewContactPane";
 
 const Contacts = () => {
   const [showNewContactPane, setShowNewContactPane] = useState(false);
   const [showMenuBar, setShowMenuBar] = useState(true);
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
+  const [delToast, setDelToast] = React.useState(false);
 
   return (
     <div className="flex w-full">
@@ -85,17 +88,16 @@ const Contacts = () => {
             </div>
           }
         />
+        <ContactCard setShowToast={setDelToast} />
         <NewContactPane
           showPane={showNewContactPane}
           setShowPane={setShowNewContactPane}
           fetchContacts={null}
         />
       </div>
+      <DeleteAlert showToast={delToast} setShowToast={setDelToast} />
     </div>
   );
 };
 
 export default Contacts;
-
-/*<ContactTable />
- */
