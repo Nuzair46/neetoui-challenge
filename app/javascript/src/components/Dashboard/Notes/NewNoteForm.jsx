@@ -5,6 +5,8 @@ import { Formik, Form } from "formik";
 
 import notesApi from "apis/notes";
 
+import { CONTACT_LIST, TAG_LIST } from "./constants";
+
 export default function NewNoteForm({ onClose, refetch }) {
   const handleSubmit = async values => {
     try {
@@ -17,59 +19,27 @@ export default function NewNoteForm({ onClose, refetch }) {
   };
   return (
     <Formik onSubmit={handleSubmit}>
-      <Form className="w-full">
-        <Input label="Title" name="title" className="mb-6" required />
-        <Textarea
-          label="Description"
-          name="description"
-          rows={1}
-          className="mb-6"
-          required
-        />
-        <div className="mb-6">
+      <Form className="w-full space-y-6">
+        <Input label="Title" name="title" required />
+        <Textarea label="Description" name="description" rows={1} required />
+        <div>
           <Select
             placeholder="Select Role"
             required
             isSearchable
             label="Assigned Contact"
             name="contactList"
-            options={[
-              {
-                label: "Nuzair",
-                value: "value1"
-              },
-              {
-                label: "Sam",
-                value: "value2"
-              },
-              {
-                label: "Oliver",
-                value: "value3"
-              }
-            ]}
+            options={CONTACT_LIST}
           />
         </div>
-        <div className="mb-6">
+        <div>
           <Select
             placeholder="Select Role"
             isSearchable
             required
             label="Tags"
             name="tagList"
-            options={[
-              {
-                label: "HR",
-                value: "value1"
-              },
-              {
-                label: "TB3",
-                value: "value2"
-              },
-              {
-                label: "Onboarding",
-                value: "value3"
-              }
-            ]}
+            options={TAG_LIST}
           />
         </div>
       </Form>
