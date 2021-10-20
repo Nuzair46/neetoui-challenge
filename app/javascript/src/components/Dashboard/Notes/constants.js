@@ -15,16 +15,28 @@ export const CONTACT_LIST = [
 
 export const TAG_LIST = [
   {
-    label: "HR",
+    label: "Getting Started",
     value: "value1"
   },
   {
-    label: "TB3",
+    label: "Onboarding",
     value: "value2"
   },
   {
-    label: "Onboarding",
+    label: "User Flow",
     value: "value3"
+  },
+  {
+    label: "UX",
+    value: "value4"
+  },
+  {
+    label: "Bugs",
+    value: "value5"
+  },
+  {
+    label: "V2",
+    value: "value6"
   }
 ];
 

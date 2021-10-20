@@ -12,7 +12,7 @@ export const NAV_LINKS = [
   },
   {
     label: "Contacts",
-    to: "/login",
+    to: "/contacts",
     icon: () => <UserCircle color="#1e1e20" size={24} />
   },
   {
