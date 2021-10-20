@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Modal, Typography, Button } from "@bigbinary/neetoui/v2";
+import { Modal, Typography, Button } from "neetouiv2";
 
 export default function DeleteAlert({ showToast, setShowToast }) {
   return (

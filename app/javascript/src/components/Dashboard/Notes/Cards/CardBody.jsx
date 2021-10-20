@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Typography } from "@bigbinary/neetoui/v2";
+import { Typography } from "neetouiv2";
 import PropTypes from "prop-types";
 
 const CardBody = ({ message }) => {

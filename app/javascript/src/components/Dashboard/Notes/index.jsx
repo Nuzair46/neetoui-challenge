@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
-import { Typography, Input, Button, PageLoader } from "@bigbinary/neetoui/v2";
-import { Header, MenuBar } from "@bigbinary/neetoui/v2/layouts";
+import { Typography, Input, Button, PageLoader } from "neetouiv2";
 
 import notesApi from "apis/notes";
+import { Header, MenuBar } from "neetouiv2/layouts";
 
 import NewNotePane from "./NewNotePane";
 import NoteTable from "./NoteTable";

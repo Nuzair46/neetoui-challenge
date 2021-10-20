@@ -1,7 +1,8 @@
 import React from "react";
 
-import { Sidebar } from "@bigbinary/neetoui/v2/layouts";
 import { withRouter } from "react-router-dom";
+
+import { Sidebar } from "neetouiv2/layouts";
 
 import { NAV_LINKS } from "./constants";
 

@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Check } from "@bigbinary/neeto-icons";
-import { Pane, Typography, Button, Toastr } from "@bigbinary/neetoui/v2";
+import { Pane, Typography, Button, Toastr } from "neetouiv2";
 
 import NewNoteForm from "./NewNoteForm";
 

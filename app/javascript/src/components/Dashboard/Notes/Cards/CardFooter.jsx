@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Clock } from "@bigbinary/neeto-icons";
-import { Label, Tooltip } from "@bigbinary/neetoui/v2";
+import { Label, Tooltip } from "neetouiv2";
 import PropTypes from "prop-types";
 
 const CardFooter = ({ stat }) => {

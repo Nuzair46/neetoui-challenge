@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Input, Textarea, Select } from "@bigbinary/neetoui/v2";
 import { Formik, Form } from "formik";
+import { Input, Textarea, Select } from "neetouiv2";
 
 import notesApi from "apis/notes";
 

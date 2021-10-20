@@ -1,7 +1,7 @@
 import React from "react";
 
 import { MenuVertical } from "@bigbinary/neeto-icons";
-import { Dropdown, Typography } from "@bigbinary/neetoui/v2";
+import { Dropdown, Typography } from "neetouiv2";
 import PropTypes from "prop-types";
 
 const CardHeader = ({ title, setDelToast }) => {
