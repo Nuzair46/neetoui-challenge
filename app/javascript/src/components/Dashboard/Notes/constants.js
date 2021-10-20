@@ -27,3 +27,31 @@ export const TAG_LIST = [
     value: "value3"
   }
 ];
+
+export const NOTE_LIST = [
+  {
+    title: "How to claim warranty?",
+    message: `"Are you getting my text???" She texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
+    stat: "Created"
+  },
+  {
+    title: "How to claim warranty?",
+    message: `"Are you getting my text???" She texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
+    stat: "Drafted"
+  },
+  {
+    title: "How to claim warranty?",
+    message: `"Are you getting my text???" She texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
+    stat: "Drafted"
+  },
+  {
+    title: "How to claim warranty?",
+    message: `"Are you getting my text???" She texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
+    stat: "Drafted"
+  },
+  {
+    title: "How to claim warranty?",
+    message: `"Are you getting my text???" She texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
+    stat: "Drafted"
+  }
+];
