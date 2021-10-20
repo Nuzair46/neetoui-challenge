@@ -2,9 +2,9 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
-import { CardBody } from "./CardBody";
-import { CardFooter } from "./CardFooter";
-import { CardHeader } from "./CardHeader";
+import CardBody from "./CardBody";
+import CardFooter from "./CardFooter";
+import CardHeader from "./CardHeader";
 
 import DeleteAlert from "../DeleteAlert";
 
