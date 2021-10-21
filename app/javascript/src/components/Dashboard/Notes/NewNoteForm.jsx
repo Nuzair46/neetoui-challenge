@@ -1,11 +1,11 @@
 import React from "react";
 
 import { Formik, Form } from "formik";
-import { Button } from "neetoui";
-import { Input, Textarea } from "neetoui/formik";
-import * as yup from "yup";
+import { Input, Textarea, Select } from "neetouiv2";
 
 import notesApi from "apis/notes";
+
+import { CONTACT_LIST, TAG_LIST } from "./constants";
 
 export default function NewNoteForm({ onClose, refetch }) {
   const handleSubmit = async values => {
@@ -18,41 +18,31 @@ export default function NewNoteForm({ onClose, refetch }) {
     }
   };
   return (
-    <Formik
-      initialValues={{
-        title: "",
-        description: ""
-      }}
-      onSubmit={handleSubmit}
-      validationSchema={yup.object({
-        title: yup.string().required("Title is required"),
-        description: yup.string().required("Description is required")
-      })}
-    >
-      {({ isSubmitting }) => (
-        <Form>
-          <Input label="Title" name="title" className="mb-6" />
-          <Textarea label="Description" name="description" rows={8} />
-          <div className="nui-pane__footer nui-pane__footer--absolute">
-            <Button
-              onClick={onClose}
-              label="Cancel"
-              size="large"
-              style="secondary"
-            />
-
-            <Button
-              type="submit"
-              label="Submit"
-              size="large"
-              style="primary"
-              className="ml-2"
-              disabled={isSubmitting}
-              loading={isSubmitting}
-            />
-          </div>
-        </Form>
-      )}
+    <Formik onSubmit={handleSubmit}>
+      <Form className="w-full space-y-6">
+        <Input label="Title" name="title" required />
+        <Textarea label="Description" name="description" rows={1} required />
+        <div>
+          <Select
+            placeholder="Select Role"
+            required
+            isSearchable
+            label="Assigned Contact"
+            name="contactList"
+            options={CONTACT_LIST}
+          />
+        </div>
+        <div>
+          <Select
+            placeholder="Select Role"
+            isSearchable
+            required
+            label="Tags"
+            name="tagList"
+            options={TAG_LIST}
+          />
+        </div>
+      </Form>
     </Formik>
   );
 }

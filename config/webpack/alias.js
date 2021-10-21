@@ -8,6 +8,7 @@ module.exports = {
       contexts: "src/contexts",
       reducers: "src/reducers",
       neetoui: "@bigbinary/neetoui",
+      neetouiv2: "@bigbinary/neetoui/v2",
       helpers: "src/helpers"
     }
   }
