@@ -3,23 +3,27 @@ import React from "react";
 import { Check } from "@bigbinary/neeto-icons";
 import { Pane, Typography, Button, Toastr } from "neetouiv2";
 
-import NewNoteForm from "./NewNoteForm";
+import NewContactForm from "./NewContactForm";
 
-export default function NewNotePane({ fetchNotes, showPane, setShowPane }) {
+export default function NewContactPane({
+  fetchContacts,
+  showPane,
+  setShowPane
+}) {
   const onClose = () => setShowPane(false);
   const handleSubmit = () => {
     onClose();
-    Toastr.success("Note successfully created.");
+    Toastr.success("Contact successfully created.");
   };
   return (
     <Pane isOpen={showPane} onClose={onClose}>
       <Pane.Header>
         <Typography style="h2" weight="semibold">
-          Add New Note
+          Add New Contact
         </Typography>
       </Pane.Header>
       <Pane.Body>
-        <NewNoteForm onClose={onClose} refetch={fetchNotes} />
+        <NewContactForm onClose={onClose} refetch={fetchContacts} />
       </Pane.Body>
       <Pane.Footer className="flex items-center space-x-2">
         <Button
