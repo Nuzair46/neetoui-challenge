@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Clock } from "@bigbinary/neeto-icons";
-import { Label, Tooltip } from "neetouiv2";
+import { Label, Tooltip, Typography } from "neetouiv2";
 import PropTypes from "prop-types";
 
 const CardFooter = ({ stat }) => {
@@ -10,7 +10,7 @@ const CardFooter = ({ stat }) => {
       <Label className="border rounded-sm py-1 px-2 neeto-ui-bg-gray-100">
         Getting Started
       </Label>
-      <Label className="flex justify-evenly">
+      <Typography className="flex justify-evenly">
         {<Clock width="16" />}{" "}
         <Tooltip placement={"bottom-end"} content={"Wednesday, 10:30AM"}>
           <p className="inline-block mx-1"> {stat} 2 hours ago</p>
@@ -20,7 +20,7 @@ const CardFooter = ({ stat }) => {
           width="24"
           className="inline-block rounded-full"
         />
-      </Label>
+      </Typography>
     </div>
   );
 };

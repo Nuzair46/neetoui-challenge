@@ -8,14 +8,14 @@ import CardBody from "./CardBody";
 import CardFooter from "./CardFooter";
 import CardHeader from "./CardHeader";
 
-const Card = ({ title, message, stat }) => {
+const Card = ({ title, children, stat }) => {
   const [delToast, setDelToast] = React.useState(false);
 
   return (
     <div className="mb-4 rounded-sm neeto-ui-border-gray-300 neeto-ui-shadow-xs border neeto-ui-bg-white">
       <div className="p-4">
         <CardHeader title={title} setDelToast={setDelToast} />
-        <CardBody message={message} />
+        <CardBody>{children}</CardBody>
         <CardFooter stat={stat} />
       </div>
       <DeleteAlert
@@ -29,7 +29,7 @@ const Card = ({ title, message, stat }) => {
 
 Card.propTypes = {
   title: PropTypes.string,
-  message: PropTypes.string,
+  children: PropTypes.string,
   stat: PropTypes.string
 };
 
