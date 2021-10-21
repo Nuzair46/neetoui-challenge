@@ -2,11 +2,11 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
+import DeleteAlert from "components/Common/DeleteAlert";
+
 import CardBody from "./CardBody";
 import CardFooter from "./CardFooter";
 import CardHeader from "./CardHeader";
-
-import DeleteAlert from "../DeleteAlert";
 
 const Card = ({ title, message, stat }) => {
   const [delToast, setDelToast] = React.useState(false);
@@ -18,7 +18,11 @@ const Card = ({ title, message, stat }) => {
         <CardBody message={message} />
         <CardFooter stat={stat} />
       </div>
-      <DeleteAlert showToast={delToast} setShowToast={setDelToast} />
+      <DeleteAlert
+        showToast={delToast}
+        setShowToast={setDelToast}
+        value="Note"
+      />
     </div>
   );
 };
