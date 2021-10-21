@@ -8,12 +8,9 @@ function NoteTable() {
     <div>
       {NOTE_LIST.map((content, index) => {
         return (
-          <Card
-            key={index}
-            title={content.title}
-            message={content.message}
-            stat={content.stat}
-          />
+          <Card key={index} title={content.title} stat={content.stat}>
+            {content.message}
+          </Card>
         );
       })}
     </div>

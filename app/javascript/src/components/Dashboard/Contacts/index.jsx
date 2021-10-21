@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
 import { Typography, Input, Button } from "neetouiv2";
 
+import DeleteAlert from "components/Common/DeleteAlert";
 import { Header, MenuBar } from "neetouiv2/layouts";
 
 import ContactCard from "./ContactCard";
-import DeleteAlert from "./DeleteAlert";
 import NewContactPane from "./NewContactPane";
 
 const Contacts = () => {
@@ -95,7 +95,11 @@ const Contacts = () => {
           fetchContacts={null}
         />
       </div>
-      <DeleteAlert showToast={delToast} setShowToast={setDelToast} />
+      <DeleteAlert
+        showToast={delToast}
+        setShowToast={setDelToast}
+        value="Contact"
+      />
     </div>
   );
 };
